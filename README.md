@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d1f6dcac-f401-416e-9a0a-f99488126a82)# chapter-3
+# chapter-3
 
 Instructor Queries
 🔸 Basic Instructor Info
@@ -77,10 +77,11 @@ WHERE salary = (SELECT MAX(salary) FROM instructor);
 ```
 
 🔸 Instructor and Course Relations
-4.	For all instructors in the university who have taught some course, find their names and the course ID of all courses they taught.
-5.	Find the instructor names and the courses they taught for all instructors in the Biology department who have taught some course.
-6.	Display a list of all instructors, showing each instructor's ID and the number of sections taught. Make sure to show the number of sections as 0 for instructors who have not taught any section.
-7.	Output instructor names and buildings for each building an instructor has taught in. Include instructor names who have not taught any classes (the building name should be NULL in this case).
+
+4. For all instructors in the university who have taught some course, find their names and the course ID of all courses they taught.
+5. Find the instructor names and the courses they taught for all instructors in the Biology department who have taught some course.
+6. Display a list of all instructors, showing each instructor's ID and the number of sections taught. Make sure to show the number of sections as 0 for instructors who have not taught any section.
+7. Output instructor names and buildings for each building an instructor has taught in. Include instructor names who have not taught any classes (the building name should be NULL in this case).
 
 
 ### 4. **For all instructors in the university who have taught some course, find their names and the course ID of all courses they taught.**
@@ -128,8 +129,6 @@ FROM instructor;
 
 ---
 
-এখানে আরও কিছু সহজ এবং ভিন্ন পদ্ধতিতে SQL কুয়েরি দেওয়া হলো:
-
 ---
 
 ### 5. **Find the names of all instructors whose salary is greater than at least one instructor in the Biology department.**
@@ -153,12 +152,12 @@ WHERE salary > (SELECT MIN(salary) FROM instructor WHERE dept_name = 'History');
 ```
 
 Salary Comparisons
-5.	Find the names of all instructors whose salary is greater than at least one instructor in the Biology department.
-6.	Find the ID and names of all instructors whose salary is greater than at least one instructor in the History department.
-7.	Find the names of all instructors that have a salary value greater than that of each instructor in the Biology department.
-8.	Find the departments that have the highest average salary. *
-9.	Find the average instructors' salaries of those departments where the average salary is greater than $42,000.
-10.	Find the maximum across all departments of the total salary at each department.
+5. Find the names of all instructors whose salary is greater than at least one instructor in the Biology department.
+6. Find the ID and names of all instructors whose salary is greater than at least one instructor in the History department.
+7. Find the names of all instructors that have a salary value greater than that of each instructor in the Biology department.
+8. Find the departments that have the highest average salary. *
+9. Find the average instructors' salaries of those departments where the average salary is greater than $42,000.
+10. Find the maximum across all departments of the total salary at each department.
 
 ---
 
