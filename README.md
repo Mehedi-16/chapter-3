@@ -169,23 +169,25 @@ Salary Comparisons
 ```sql
 SELECT name
 FROM instructor
-WHERE salary > ALL (SELECT salary FROM instructor WHERE dept_name = 'Biology');
+WHERE salary > ANY (SELECT salary FROM instructor WHERE dept_name = 'Biology');
 ```
 
-এখানে `ALL` ব্যবহার করে আমরা নিশ্চিত করছি যে, যে ইনস্ট্রাক্টরের বেতন **Biology** ডিপার্টমেন্টের সকল ইনস্ট্রাক্টরের বেতনের তুলনায় বেশি।
+এখানে `ALL/ANY` ব্যবহার করে আমরা নিশ্চিত করছি যে, যে ইনস্ট্রাক্টরের বেতন **Biology** ডিপার্টমেন্টের সকল ইনস্ট্রাক্টরের বেতনের তুলনায় বেশি।
 
 ---
 
 ### 8. **Find the departments that have the highest average salary.**
 
 ```sql
-SELECT dept_name
+SELECT dept_name, AVG(salary) AS avg_salary
 FROM instructor
 GROUP BY dept_name
-HAVING AVG(salary) = (SELECT MAX(AVG(salary)) FROM instructor GROUP BY dept_name);
+ORDER BY avg_salary DESC
+LIMIT 1;
 ```
-
-এখানে প্রথমে আমরা প্রতিটি ডিপার্টমেন্টের গড় বেতন বের করছি, এবং তারপর সবচেয়ে বেশি গড় বেতন পাওয়া ডিপার্টমেন্ট নির্বাচন করছি।
+এখানে:
+ORDER BY avg_salary DESC দিয়ে ডিপার্টমেন্টগুলিকে বড় থেকে ছোট গড় বেতনের ক্রমে সাজানো হয়েছে।<br>
+LIMIT 1 দিয়ে বলা হচ্ছে: শুধু সবচেয়ে উপরের ১টি রেকর্ড দেখাও, অর্থাৎ সবচেয়ে বেশি গড় বেতন যার, শুধু সেই ডিপার্টমেন্ট।
 
 ---
 
