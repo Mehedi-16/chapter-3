@@ -207,10 +207,11 @@ HAVING দিয়ে ফিলটার করা হয় আর ORDER BY দি�
 ### 10. **Find the maximum total salary across all departments.**
 
 ```sql
-SELECT dept_name
+SELECT dept_name,SUM(salary)
 FROM instructor
 GROUP BY dept_name
-HAVING SUM(salary) = (SELECT MAX(SUM(salary)) FROM instructor GROUP BY dept_name);
+ORDER BY SUM(salary) DESC
+LIMIT 1;
 ```
 ---
 Salary Updates
