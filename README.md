@@ -194,7 +194,7 @@ LIMIT 1 দিয়ে বলা হচ্ছে: শুধু সবচেয়ে 
 ### 9. **Find the average instructors' salaries of those departments where the average salary is greater than \$42,000.**
 
 ```sql
-SELECT dept_name, AVG(salary) AS avg_salary
+SELECT dept_name, AVG(salary)
 FROM instructor
 GROUP BY dept_name
 HAVING AVG(salary) > 42000;
