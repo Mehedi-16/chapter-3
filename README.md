@@ -179,13 +179,13 @@ WHERE salary > ANY (SELECT salary FROM instructor WHERE dept_name = 'Biology');
 ### 8. **Find the departments that have the highest average salary.**
 
 ```sql
-SELECT dept_name, AVG(salary) AS avg_salary
+SELECT dept_name,AVG(salary)
 FROM instructor
 GROUP BY dept_name
-ORDER BY avg_salary DESC
+ORDER BY AVG(salary) DESC
 LIMIT 1;
 ```
-এখানে:
+এখানে:<br>
 ORDER BY avg_salary DESC দিয়ে ডিপার্টমেন্টগুলিকে বড় থেকে ছোট গড় বেতনের ক্রমে সাজানো হয়েছে।<br>
 LIMIT 1 দিয়ে বলা হচ্ছে: শুধু সবচেয়ে উপরের ১টি রেকর্ড দেখাও, অর্থাৎ সবচেয়ে বেশি গড় বেতন যার, শুধু সেই ডিপার্টমেন্ট।
 
