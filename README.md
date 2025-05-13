@@ -1,5 +1,8 @@
 # chapter-3
 
+<img width="673" alt="Screenshot 2025-05-14 at 12 25 32 AM" src="https://github.com/user-attachments/assets/633015fd-79ff-413d-8b1e-946e9af9a695" />
+
+
 Instructor Queries
 🔸 Basic Instructor Info
 1.	Find out the ID and salary of the instructors.
